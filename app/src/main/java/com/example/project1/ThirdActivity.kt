@@ -1,22 +1,23 @@
 package com.example.project1
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class ThirdActivity  : AppCompatActivity(){
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_third)
 
-        val button: Button = findViewById(R.id.buttonMain)
-        button.setOnClickListener {
-            Log.d("button", "Button was clicked")
+        Log.i("ThirdActivity", "The third activity was created")
+
+        val button4 : Button = findViewById(R.id.buttonFourth)
+        button4.setOnClickListener(){
             val intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }
-
     }
 }
