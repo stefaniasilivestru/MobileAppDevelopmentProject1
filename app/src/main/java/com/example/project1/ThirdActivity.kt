@@ -8,14 +8,17 @@ import androidx.appcompat.app.AppCompatActivity
 
 class ThirdActivity  : AppCompatActivity(){
 
+    private val TAG1 = "buttonToSecond"
+    private val TAG2 = "activityCreated"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_third)
 
-        Log.i("ThirdActivity", "The third activity was created")
+        Log.i(TAG2, "The third activity was created")
 
-        val button4 : Button = findViewById(R.id.buttonFourth)
-        button4.setOnClickListener(){
+        val buttonToSecond : Button = findViewById(R.id.buttonThirdActivity)
+        buttonToSecond.setOnClickListener(){
+            Log.d(TAG1, "Button was clicked and we are going back to the second activity")
             val intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }

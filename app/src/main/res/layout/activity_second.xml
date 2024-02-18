@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/buttonSecond"
+        android:id="@+id/buttonToMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Go to the main activity"
@@ -16,12 +16,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonThird"
+        android:id="@+id/buttonToThird"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="Go to the third activity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSecond" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonToMain" />
 </androidx.constraintlayout.widget.ConstraintLayout>
