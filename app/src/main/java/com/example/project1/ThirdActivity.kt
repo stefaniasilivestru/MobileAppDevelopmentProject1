@@ -18,7 +18,7 @@ class ThirdActivity  : AppCompatActivity(){
 
         val buttonToSecond : Button = findViewById(R.id.buttonThirdActivity)
         buttonToSecond.setOnClickListener(){
-            Log.d(TAG1, "Button was clicked and we are going back to the second activity")
+            Log.w(TAG1, "Button was clicked and we are going back to the second activity")
             val intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }

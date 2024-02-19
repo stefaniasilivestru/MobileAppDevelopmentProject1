@@ -10,13 +10,16 @@ import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.widget.Button
 import android.widget.TextView
 import androidx.core.app.ActivityCompat
+import androidx.core.view.marginRight
 
 class MainActivity : AppCompatActivity(), LocationListener {
     private val TAG1 = "buttonMain"
     private val TAG2 = "activityCreated"
+    private val TAG3 = "location"
 
     private lateinit var locationManager : LocationManager
     private lateinit var latestLocation: Location
@@ -35,6 +38,19 @@ class MainActivity : AppCompatActivity(), LocationListener {
             bundle.putParcelable("location", latestLocation)
             intent.putExtra("locationBundle", bundle)
             startActivity(intent)
+        }
+
+        val buttonToMap : Button = findViewById(R.id.buttonToMap)
+        buttonToMap.setOnClickListener {
+            if (latestLocation != null) {
+                val intent = Intent(this, OpenStreetMapActivity::class.java)
+                val bundle = Bundle()
+                bundle.putParcelable("location", latestLocation)
+                intent.putExtra("locationBundle", bundle)
+                startActivity(intent)
+            } else{
+                Log.e(TAG3, "Location not set yet.")
+            }
         }
 
         // Get the location
@@ -74,9 +90,9 @@ class MainActivity : AppCompatActivity(), LocationListener {
 
     override fun onLocationChanged(location: Location) {
         val textView : TextView = findViewById(R.id.mainTextView)
-        textView.text = "Latitude: ${location.latitude}, Longitude: ${location.longitude}"
+        textView.text = "Your current location is set at:\nLatitude: ${location.latitude}, Longitude: ${location.longitude}"
+        textView.gravity = Gravity.CENTER
         Log.d("location", "Latitude: ${location.latitude}, Longitude: ${location.longitude}")
-
         latestLocation = location // Initialize latestLocation
     }
 
