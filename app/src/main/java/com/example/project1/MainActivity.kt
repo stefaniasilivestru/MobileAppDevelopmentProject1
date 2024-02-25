@@ -12,9 +12,13 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.view.marginRight
+import java.io.File
 
 class MainActivity : AppCompatActivity(), LocationListener {
     private val TAG1 = "buttonMain"
@@ -50,6 +54,18 @@ class MainActivity : AppCompatActivity(), LocationListener {
                 startActivity(intent)
             } else{
                 Log.e(TAG3, "Location not set yet.")
+            }
+        }
+
+        val buttonRegister : Button = findViewById(R.id.buttonRegister)
+        buttonRegister.setOnClickListener {
+            val userIdentifier = getUserIdentifier()
+            if (userIdentifier == null) {
+                askForUserIdentifier()
+            } else {
+                Toast.makeText(this, "You are register as $userIdentifier!", Toast.LENGTH_SHORT).show()
+                val textView : TextView = findViewById(R.id.textViewRegister)
+                textView.text = "You are register as $userIdentifier!"
             }
         }
 
@@ -90,10 +106,53 @@ class MainActivity : AppCompatActivity(), LocationListener {
 
     override fun onLocationChanged(location: Location) {
         val textView : TextView = findViewById(R.id.mainTextView)
-        textView.text = "Your current location is set at:\nLatitude: ${location.latitude}, Longitude: ${location.longitude}"
+        textView.text = "Your current location is set at:" +
+                "\nLatitude: ${location.latitude}, Longitude: ${location.longitude}"
         textView.gravity = Gravity.CENTER
-        Log.d("location", "Latitude: ${location.latitude}, Longitude: ${location.longitude}")
+        Toast.makeText(this, "Location updated! [${location.latitude}, ${location.longitude}]", Toast.LENGTH_SHORT).show()
+        saveCoordinatesToFile(location.latitude, location.longitude)
         latestLocation = location // Initialize latestLocation
+    }
+
+    private fun askForUserIdentifier() {
+        val input = EditText(this)
+        AlertDialog.Builder(this)
+            .setTitle("Enter your name")
+            .setIcon(R.mipmap.ic_launcher)
+            .setView(input)
+            .setPositiveButton("OK") { _, _ ->
+                val name = input.text.toString()
+                Log.d("User", "The user's name is $name")
+                if (name.isNotBlank()) {
+                    saveUserIdentifier(name)
+                    Toast.makeText(this, "Welcome, $name!", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Please enter a valid name.", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
+    }
+
+    private fun getUserIdentifier() : String? {
+        val sharedPreferences = this.getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
+        return sharedPreferences.getString("userIdentifier", null)
+    }
+
+    private fun saveUserIdentifier(name: String) {
+        val sharedPreferences = this.getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
+        sharedPreferences.edit().apply {
+            putString("userIdentifier", name)
+            apply()
+        }
+    }
+
+    private fun saveCoordinatesToFile(latitude: Double, longitutde: Double) {
+        val fileName = "coordinates.txt"
+        val file = File(filesDir, fileName)
+        val time = System.currentTimeMillis()
+        file.appendText("$time: [$latitude, $longitutde]\n")
+
     }
 
     override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}

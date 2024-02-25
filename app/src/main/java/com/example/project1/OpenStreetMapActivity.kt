@@ -18,7 +18,6 @@ class OpenStreetMapActivity : AppCompatActivity() {
     private val TAG = "location"
     private lateinit var map: MapView
 
-
     val coords = listOf(
         GeoPoint(40.4063, -3.6901), // Atocha Railway Station
         GeoPoint(40.4079, -3.6945), // Reina Sofia Museum
