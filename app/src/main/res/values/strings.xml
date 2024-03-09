@@ -15,4 +15,8 @@
     <string name="menu_share">Share</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_map">Map</string>
+    <string name="contactus_button_compose_email">Compose Email</string>
+    <string name="contact_text">Here you can write us a message to improve your experience with our app.</string>
+    <string name="share_text">Share your travel experience with your friends!</string>
+    <string name="text_button_share">Share</string>
 </resources>

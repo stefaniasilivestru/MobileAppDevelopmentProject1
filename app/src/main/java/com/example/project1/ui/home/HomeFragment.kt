@@ -7,6 +7,7 @@ import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,21 +42,12 @@ class HomeFragment : Fragment(), LocationListener {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textRegister
+        val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
 
-        val buttonRegister : Button = binding.buttonRegister
-        buttonRegister.setOnClickListener() {
-            Toast.makeText(context, "Button clicked", Toast.LENGTH_SHORT).show()
-            showLoginDialog()
-        }
 
-        val buttonLogout : Button = binding.buttonLogout
-        buttonLogout.setOnClickListener() {
-            logoutUser()
-        }
 
         locationManager = context?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         if (ActivityCompat.checkSelfPermission(
@@ -83,41 +75,6 @@ class HomeFragment : Fragment(), LocationListener {
         return root
     }
 
-    private fun showLoginDialog() {
-        val input = EditText(context)
-        AlertDialog.Builder(context)
-            .setTitle("Enter username")
-            .setIcon(R.mipmap.ic_launcher)
-            .setView(input)
-            .setPositiveButton("Login") { dialog, which ->
-                val username = input.text.toString()
-                if (username.isNotBlank()) {
-                    binding.textRegister.text = "Welcome, $username"
-                    // save username to shared preferences
-                    Toast .makeText(context, "Welcome, $username", Toast.LENGTH_SHORT).show()
-                    binding.buttonRegister.visibility = View.GONE
-                    val buttonLogout : Button = binding.buttonLogout
-                    buttonLogout.visibility = View.VISIBLE
-                } else {
-                    Toast.makeText(context, "Please enter a username", Toast.LENGTH_SHORT).show()
-                }
-            }
-            .setNegativeButton("Cancel") { dialog, which ->
-                dialog.cancel()
-            }
-            .show()
-    }
-
-    private fun logoutUser() {
-        // implement logoutUser -> clear shared preferences
-
-        binding.textRegister.text = "Please login to continue."
-        binding.buttonRegister.visibility = View.VISIBLE
-        val buttonLogout : Button = binding.buttonLogout
-        buttonLogout.visibility = View.GONE
-    }
-
-
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -136,8 +93,9 @@ class HomeFragment : Fragment(), LocationListener {
     }
 }
     override fun onLocationChanged(location: Location) {
-        val textView: TextView = binding.textLocation
-        textView.text = "Latitude: ${location.latitude}, Longitude: ${location.longitude}"
+//        val textView: TextView = binding.textLocation
+        Log.d("location", "Latitude: ${location.latitude}, Longitude: ${location.longitude}")
+//        textView.text = "Latitude: ${location.latitude}, Longitude: ${location.longitude}"
     }
 
     override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}

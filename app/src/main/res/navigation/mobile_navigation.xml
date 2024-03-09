@@ -22,4 +22,21 @@
         android:name="com.example.project1.ui.map.MapFragment"
         android:label="@string/menu_map"
         tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/nav_contactus"
+        android:name="com.example.project1.ui.contactus.ContacusFragment"
+        android:label="@string/menu_contactus"
+        tools:layout="@layout/fragment_contactus" />
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.example.project1.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.project1.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
