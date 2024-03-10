@@ -1,6 +1,7 @@
 package com.example.project1
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
@@ -19,6 +20,9 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.room.Room
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.project1.databinding.ActivityMainBinding
 import org.osmdroid.config.Configuration
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
@@ -31,11 +35,18 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var map: MapView
 
+    companion object {
+        lateinit var database: Database
+            private set
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Log.d("MainActivity", "onCreate")
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
@@ -57,7 +68,11 @@ class MainActivity : AppCompatActivity() {
             applicationContext,
             getSharedPreferences("osmdroid", MODE_PRIVATE))
 
-
+        // create database
+        database = Room.databaseBuilder(
+            applicationContext,
+            Database::class.java, "users-database"
+        ).build()
 
     }
 
@@ -65,6 +80,23 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+//    private fun clearSharedPreferences() {
+//        val sharedPref = getPreferences(Context.MODE_PRIVATE)
+//        Log.i("ana", sharedPref.all.toString())
+//        sharedPref.edit().clear().apply()
+//    }
+
+    override fun onDestroy() {
+//        Log.i("ana", "onDestroy")
+//        clearSharedPreferences()
+        super.onDestroy()
+
+    }
+
+
+
+
 
 
 }

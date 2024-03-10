@@ -18,15 +18,30 @@
         app:layout_constraintVertical_bias="0.232"
         tools:layout_editor_absoluteX="45dp" />
 
+
     <Button
         android:id="@+id/button_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:layout_marginTop="80dp"
+        android:text="Register"
         android:textSize="16sp"
-        android:layout_marginStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_register" />
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_register"
+        app:layout_constraintVertical_bias="0.116" />
 
     <Button
         android:id="@+id/button_logout"
@@ -37,5 +52,5 @@
         android:visibility="gone"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_register" />
+        app:layout_constraintTop_toBottomOf="@+id/button_register" />
 </androidx.constraintlayout.widget.ConstraintLayout>
