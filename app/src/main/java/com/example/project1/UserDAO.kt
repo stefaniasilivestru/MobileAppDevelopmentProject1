@@ -15,4 +15,12 @@ interface UserDAO {
 
     @Query("SELECT password FROM users WHERE username = :username")
     fun getPasswordByUsername(username: String): String
+    @Query("SELECT uid FROM users WHERE username = :username")
+    fun getIdByUsername(username: String): Int
+    @Insert
+    fun insertUserLocation(userLocation: UserLocationEntity)
+
+//    @Query("SELECT * FROM user_locations WHERE userId = :userId")
+//    fun getUserLocations(userId: Int): List<UserLocationEntity>
+
 }

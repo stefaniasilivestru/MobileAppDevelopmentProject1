@@ -81,11 +81,6 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-//    private fun clearSharedPreferences() {
-//        val sharedPref = getPreferences(Context.MODE_PRIVATE)
-//        Log.i("ana", sharedPref.all.toString())
-//        sharedPref.edit().clear().apply()
-//    }
 
     override fun onDestroy() {
 //        Log.i("ana", "onDestroy")

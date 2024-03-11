@@ -21,6 +21,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.project1.MainActivity
 import com.example.project1.R
 import com.example.project1.UserEntity
+import com.example.project1.UserLocationEntity
 import com.example.project1.databinding.FragmentProfileBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -111,10 +112,15 @@ class ProfileFragment : Fragment() {
                         // check password match
                         if (password == repeatPassword) {
                             val user = UserEntity(0, username, password)
-                            //TODO: insert user in the database using DAO for each user locations
-
-
                             userDAO.insertUser(user)
+
+                            //TODO: insert user in the database using DAO for each user locations EXAMPLE:
+                            val userLocation = UserLocationEntity(0, userDAO.getIdByUsername(username) ,"Madrid", "Sol", 40.416775, -3.703790)
+                            userDAO.insertUserLocation(userLocation)
+
+                            val userLocation2 = UserLocationEntity(0, userDAO.getIdByUsername(username) ,"Madrid", "Gran Via", 40.420006, -3.709924)
+                            userDAO.insertUserLocation(userLocation2)
+
                             showToast("User registered: $username")
                             Log.d("user", "User registered: $username")
                         } else {
