@@ -2,6 +2,7 @@ package com.example.project1.ui.home
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
@@ -18,15 +19,17 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.example.project1.R
 import com.example.project1.databinding.FragmentHomeBinding
+import com.example.project1.ui.profile.ProfileFragment
+import com.firebase.ui.auth.AuthUI
 
 class HomeFragment : Fragment(), LocationListener {
 
     private var _binding: FragmentHomeBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
     private lateinit var locationManager: LocationManager
     private val locationPermissionCode = 2
@@ -43,10 +46,16 @@ class HomeFragment : Fragment(), LocationListener {
         val root: View = binding.root
 
         val textView: TextView = binding.textHome
+        val buttonHome: Button = binding.buttonHome
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
 
+        buttonHome.setOnClickListener() {
+            Toast.makeText(context, "Ready to log in", Toast.LENGTH_SHORT).show()
+            // go to the profile fragment
+            findNavController().navigate(R.id.action_home_to_profile)
+        }
 
 
         locationManager = context?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
@@ -101,5 +110,7 @@ class HomeFragment : Fragment(), LocationListener {
     override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
     override fun onProviderEnabled(provider: String) {}
     override fun onProviderDisabled(provider: String) {}
+
+    // Launch sign in flow using Firebase
 
 }

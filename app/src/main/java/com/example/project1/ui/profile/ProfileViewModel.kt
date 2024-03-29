@@ -10,18 +10,18 @@ import androidx.lifecycle.ViewModel
 
 class ProfileViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "Please register first or login to continue."
-    }
-    val text: LiveData<String> = _text
-
-    private val _isLoggedIn = MutableLiveData<Boolean>()
-
-    val isLoggedIn: LiveData<Boolean> = _isLoggedIn
-
-    fun checkLoggedInState(username: String) {
-        _isLoggedIn.value = username.isNotBlank()
-    }
+//    private val _text = MutableLiveData<String>().apply {
+//        value = "Enter your account details"
+//    }
+//    val text: LiveData<String> = _text
+//
+//    private val _isLoggedIn = MutableLiveData<Boolean>()
+//
+//    val isLoggedIn: LiveData<Boolean> = _isLoggedIn
+//
+//    fun checkLoggedInState(username: String) {
+//        _isLoggedIn.value = username.isNotBlank()
+//    }
 
 
 

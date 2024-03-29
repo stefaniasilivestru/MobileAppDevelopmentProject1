@@ -24,6 +24,7 @@ import androidx.room.Room
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.project1.databinding.ActivityMainBinding
+import com.google.firebase.database.DatabaseReference
 import org.osmdroid.config.Configuration
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
@@ -34,7 +35,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var map: MapView
-
     companion object {
         lateinit var database: Database
             private set
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
             applicationContext,
             Database::class.java, "users-database"
         ).build()
-
+        
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -83,8 +83,6 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onDestroy() {
-//        Log.i("ana", "onDestroy")
-//        clearSharedPreferences()
         super.onDestroy()
 
     }
