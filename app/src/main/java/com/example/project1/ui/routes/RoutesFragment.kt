@@ -46,14 +46,12 @@ class RoutesFragment : Fragment() {
         buttonAddRoute = view.findViewById(R.id.button_add_route)
         recyclerView = view.findViewById(R.id.recycler_view_routes)
         recyclerView?.layoutManager = LinearLayoutManager(context)
-
             if (FirebaseAuth.getInstance().currentUser != null) {
                 firebaseRef = FirebaseDatabase.getInstance(DATABASE_URL).getReference("routes")
                 routesList = arrayListOf()
                 buttonAddRoute!!.setOnClickListener() {
                     addRoute()
                 }
-
                 // retrive the data from the database into a recycler view
                 fetchData()
                 Log.d("RoutesFragment", routesList.toString())
@@ -79,17 +77,11 @@ class RoutesFragment : Fragment() {
                     Toast.makeText(context, "Please enter a route name", Toast.LENGTH_SHORT).show()
                 } else {
                     val routeId = firebaseRef.push().key
-    //                                val place = Place("1", "aaa", 1.2, 1.2)
                     val places = mutableListOf<Place>()
-    //                                places.add(place)
                     val routes = Route(routeId!!, route, places)
 
                     firebaseRef.child(routeId!!).setValue(routes)
 
-    //                                val place2 = Place("2", "bbb", 2.2, 2.2)
-    //                                places.add(place2)
-    //
-    //                                firebaseRef.child(routeId!!).child("places").setValue(places)
                     Toast.makeText(context, "Route added", Toast.LENGTH_SHORT).show()
                 }
             }

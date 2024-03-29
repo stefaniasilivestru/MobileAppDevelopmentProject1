@@ -1,6 +1,8 @@
 package com.example.project1
 
 import android.app.AlertDialog
+import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,6 +46,12 @@ class RouteAdapter(var routeList : List<Route>) : RecyclerView.Adapter<RouteAdap
         holder.viewPlacesButton.setOnClickListener {
             Toast.makeText(holder.itemView.context, "View places button clicked", Toast.LENGTH_SHORT).show()
             findNavController(holder.itemView).navigate(R.id.action_routes_to_places)
+            val sharedPreferences = holder.itemView.context.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+            sharedPreferences.edit().apply {
+                putString("routeId", currentItem.routeId)
+                apply()
+            }
+            Log.d("RouteAdapter", "Route ID: ${currentItem.routeId}")
 
         }
     }
