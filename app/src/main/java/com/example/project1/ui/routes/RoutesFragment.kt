@@ -1,5 +1,6 @@
 package com.example.project1.ui.routes
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
@@ -36,6 +37,7 @@ class RoutesFragment : Fragment() {
     var recyclerView : RecyclerView? = null
     private lateinit var routesList : ArrayList<Route>
     private lateinit var firebaseRef : DatabaseReference
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

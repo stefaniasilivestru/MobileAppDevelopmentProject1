@@ -78,45 +78,45 @@
 
 
             <!-- Nested horizontal LinearLayout for buttons -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="16dp">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_marginTop="16dp">-->
 
 
-                <!-- Button to view weather -->
-                <Button
-                    android:id="@+id/button_view_weather"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="View Weather"
-                    android:backgroundTint="@color/primary_dark_color"
-                    android:textColor="@android:color/white"
-                    android:paddingStart="24dp"
-                    android:paddingTop="12dp"
-                    android:paddingEnd="24dp"
-                    android:paddingBottom="12dp"
-                    android:layout_weight="1"
-                    android:textSize="12sp"
-                    android:layout_marginStart="8dp" />
+<!--                &lt;!&ndash; Button to view weather &ndash;&gt;-->
+<!--                <Button-->
+<!--                    android:id="@+id/button_view_weather"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="View Weather"-->
+<!--                    android:backgroundTint="@color/primary_dark_color"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:paddingStart="24dp"-->
+<!--                    android:paddingTop="12dp"-->
+<!--                    android:paddingEnd="24dp"-->
+<!--                    android:paddingBottom="12dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:textSize="12sp"-->
+<!--                    android:layout_marginStart="8dp" />-->
 
-                <!-- Button to delete place -->
-                <Button
-                    android:id="@+id/button_delete_place"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Delete Place"
-                    android:backgroundTint="@color/black"
-                    android:textColor="@android:color/white"
-                    android:paddingStart="24dp"
-                    android:paddingTop="12dp"
-                    android:paddingEnd="24dp"
-                    android:paddingBottom="12dp"
-                    android:layout_weight="1"
-                    android:textSize="12sp"
-                    android:layout_marginStart="8dp" />
-            </LinearLayout>
+<!--                &lt;!&ndash; Button to delete place &ndash;&gt;-->
+<!--                <Button-->
+<!--                    android:id="@+id/button_delete_place"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Delete Place"-->
+<!--                    android:backgroundTint="@color/black"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:paddingStart="24dp"-->
+<!--                    android:paddingTop="12dp"-->
+<!--                    android:paddingEnd="24dp"-->
+<!--                    android:paddingBottom="12dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:textSize="12sp"-->
+<!--                    android:layout_marginStart="8dp" />-->
+<!--            </LinearLayout>-->
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

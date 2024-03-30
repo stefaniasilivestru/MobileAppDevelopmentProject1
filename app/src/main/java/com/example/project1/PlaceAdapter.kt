@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.database.FirebaseDatabase
@@ -21,8 +22,8 @@ class PlaceAdapter(var placeList: ArrayList<Place>) : RecyclerView.Adapter<Place
         val placeName: TextView = view.findViewById(R.id.text_place_name)
         val longitude: TextView = view.findViewById(R.id.text_longitude)
         val latitude: TextView = view.findViewById(R.id.text_latitude)
-        val deletePlaceButton : Button = view.findViewById(R.id.button_delete_place)
-        val viewWeatherButton : Button = view.findViewById(R.id.button_view_weather)
+//        val deletePlaceButton : Button = view.findViewById(R.id.button_delete_place)
+//        val viewWeatherButton : Button = view.findViewById(R.id.button_view_weather)
 
     }
 
@@ -42,15 +43,17 @@ class PlaceAdapter(var placeList: ArrayList<Place>) : RecyclerView.Adapter<Place
         holder.longitude.text = currentItem.longitude.toString()
         holder.latitude.text = currentItem.latitude.toString()
 
-        holder.deletePlaceButton.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "Delete place button clicked", Toast.LENGTH_SHORT).show()
+//        holder.deletePlaceButton.setOnClickListener {
+//            Toast.makeText(holder.itemView.context, "Delete place button clicked", Toast.LENGTH_SHORT).show()
 //            val position = holder.adapterPosition
 //            deletePlace(holder, position)
-        }
+//        }
 
-        holder.viewWeatherButton.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "View weather button clicked", Toast.LENGTH_SHORT).show()
-        }
+//        holder.viewWeatherButton.setOnClickListener {
+//            Toast.makeText(holder.itemView.context, "View weather button clicked", Toast.LENGTH_SHORT).show()
+//            findNavController(holder.itemView).navigate(R.id.action_places_to_weather)
+//
+//        }
     }
 
     private fun deletePlace(holder: ViewHolder, position: Int) {

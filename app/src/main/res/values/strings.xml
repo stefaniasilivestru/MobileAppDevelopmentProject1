@@ -18,6 +18,7 @@
     <string name="menu_places">Places</string>
     <string name="menu_contactus">Contact Us</string>
     <string name="menu_map">Map</string>
+    <string name="menu_weather">Weather</string>
     <string name="menu_register">Register</string>
     <string name="contactus_button_compose_email">Compose Email</string>
     <string name="contact_text">Here you can write us a message to improve your experience with our app.</string>

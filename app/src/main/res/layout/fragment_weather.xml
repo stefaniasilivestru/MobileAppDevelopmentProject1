@@ -1,0 +1,100 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:backgroundTint="#E7E9F8">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Location -->
+        <TextView
+            android:id="@+id/locationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/primary_dark_color"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"/>
+
+        <!-- Last Update -->
+        <TextView
+            android:id="@+id/lastUpdateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_below="@id/locationTextView"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"/>
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/lastUpdateTextView"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"/>
+
+        <!-- Weather Icon -->
+        <ImageView
+            android:id="@+id/weatherIconImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/descriptionTextView"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"/>
+
+        <!-- Temperature -->
+        <TextView
+            android:id="@+id/temperatureTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="48sp"
+            android:textColor="@color/primary_dark_color"
+            android:layout_below="@id/weatherIconImageView"
+            android:layout_marginTop="16dp"
+            android:layout_centerHorizontal="true"/>
+
+        <!-- Horizontal LinearLayout for Feels Like, Min Temperature, Max Temperature -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/temperatureTextView"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true">
+
+            <!-- Feels Like -->
+            <TextView
+                android:id="@+id/feelsLikeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginEnd="16dp"/>
+
+            <!-- Min Temperature -->
+            <TextView
+                android:id="@+id/minTemperatureTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginEnd="16dp"/>
+
+            <!-- Max Temperature -->
+            <TextView
+                android:id="@+id/maxTemperatureTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
