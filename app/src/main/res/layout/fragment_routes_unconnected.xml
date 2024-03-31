@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
         android:text="@string/welcome_please_sign_in_to_access_your_routes"
         android:textSize="24sp"
+        android:textStyle="bold"
         android:textColor="@color/primary_dark_color"
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@+id/imageViewLogo"

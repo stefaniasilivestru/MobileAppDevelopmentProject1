@@ -85,7 +85,7 @@ class ViewRouteFragment : Fragment() {
             marker.position = location
             marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
             val locationIndex = locationsCoords.indexOf(location)
-            marker.title = "Marker at ${locationsNames[locationIndex]}"
+            marker.title = "${locationsNames[locationIndex]}"
             marker.icon = ContextCompat.getDrawable(requireContext(), org.osmdroid.library.R.drawable.marker_default)
             mapView.overlays.add(marker)
         }
