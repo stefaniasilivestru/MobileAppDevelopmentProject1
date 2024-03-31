@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tripify</string>
+    <string name="navigation_drawer_open">Abrir menú de navegación</string>
+    <string name="navigation_drawer_close">Cerrar menú de navegación</string>
+    <string name="nav_header_title">Tripify</string>
+    <string name="nav_header_subtitle">¡Espero que tengas un buen viaje!</string>
+    <string name="nav_header_desc">Encabezado de navegación</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="text_home">¡Bienvenido a Tripify! Aquí puedes agregar tus rutas y ver tus lugares. ¡No olvides revisar el clima!</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_collections">Colecciones</string>
+    <string name="menu_profile">Perfil</string>
+    <string name="menu_routes">Rutas</string>
+    <string name="menu_aboutus">Sobre Nosotros</string>
+    <string name="menu_share">Compartir</string>
+    <string name="menu_settings">Ajustes</string>
+    <string name="menu_places">Lugares</string>
+    <string name="menu_contactus">Contacto</string>
+    <string name="menu_map">Mapa</string>
+    <string name="menu_weather">Clima</string>
+    <string name="menu_register">Registro</string>
+
+
+    <string name="contactus_button_compose_email">Redactar Correo Electrónico</string>
+    <string name="contact_text">Aquí puedes escribirnos un mensaje para mejorar tu experiencia con nuestra aplicación.</string>
+    <string name="share_text">¡Comparte tu experiencia de viaje con tus amigos!</string>
+    <string name="text_button_share">Compartir</string>
+    <string name="button_home_text">Ir a la página de inicio de sesión</string>
+    <string name="enter_route_name">Ingresar Nombre de Ruta</string>
+    <string name="add_route">Agregar Ruta</string>
+    <string name="log_out">Cerrar sesión</string>
+    <string name="you_are_currently_logged_in">Actualmente estás conectado.</string>
+    <string name="go_back_to_home">Volver a inicio</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="log_in">Iniciar sesión</string>
+    <string name="sign_in_with_gmail">Iniciar sesión con Gmail</string>
+    <string name="don_t_have_an_account_register_here">¿No tienes una cuenta? Regístrate aquí.</string>
+    <string name="register">Registrarse</string>
+    <string name="confirm_password">Confirmar Contraseña</string>
+    <string name="create_account">Crear cuenta</string>
+    <string name="welcome_please_sign_in_to_access_your_routes">¡Bienvenido! Por favor, inicia sesión para acceder a tus rutas.</string>
+    <string name="places">Lugares</string>
+    <string name="enjoy_your_places">¡Disfruta tus lugares!</string>
+    <string name="place_name">Nombre del Lugar:</string>
+    <string name="longitude">Longitud:</string>
+    <string name="latitude">Latitud:</string>
+    <string name="change_language">Cambiar idioma</string>
+    <string name="view_weather">Ver Clima</string>
+    <string name="add_place">Agregar Lugar</string>
+    <string name="view_places">Ver Lugares</string>
+    <string name="delete_route">Eliminar Ruta</string>
+    <string name="view_route">Ver Ruta</string>
+</resources>

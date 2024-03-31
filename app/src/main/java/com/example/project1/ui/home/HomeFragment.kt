@@ -1,6 +1,5 @@
 package com.example.project1.ui.home
 
-import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -39,21 +38,13 @@ class HomeFragment : Fragment(), LocationListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
         val buttonHome: Button = binding.buttonHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
 
         buttonHome.setOnClickListener() {
             Toast.makeText(context, "Ready to log in", Toast.LENGTH_SHORT).show()
-            // go to the profile fragment
             findNavController().navigate(R.id.action_home_to_profile)
         }
 
@@ -110,7 +101,4 @@ class HomeFragment : Fragment(), LocationListener {
     override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
     override fun onProviderEnabled(provider: String) {}
     override fun onProviderDisabled(provider: String) {}
-
-    // Launch sign in flow using Firebase
-
 }

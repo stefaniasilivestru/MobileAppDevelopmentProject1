@@ -27,6 +27,7 @@ class RouteAdapter(var routeList : List<Route>) : RecyclerView.Adapter<RouteAdap
         val deleteRouteButton : Button = view.findViewById(R.id.button_delete_route)
         val viewPlacesButton : Button = view.findViewById(R.id.button_view_places)
         val viewWeatherButton : Button = view.findViewById(R.id.button_view_weather)
+        val viewRouteButton: Button = view.findViewById(R.id.button_view_route)
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -65,8 +66,18 @@ class RouteAdapter(var routeList : List<Route>) : RecyclerView.Adapter<RouteAdap
                 putString("routeName", currentItem.routeName)
                 apply()
             }
-            Log.d("RouteAdapter", "Route ID: ${currentItem.routeName}")
 
+        }
+
+        holder.viewRouteButton.setOnClickListener {
+            Toast.makeText(holder.itemView.context, "View route button clicked", Toast.LENGTH_SHORT).show()
+            findNavController(holder.itemView).navigate(R.id.action_routes_to_view_route)
+
+            val sharedPreferences = holder.itemView.context.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+            sharedPreferences.edit().apply {
+                putString("routeId", currentItem.routeId)
+                apply()
+            }
         }
     }
 

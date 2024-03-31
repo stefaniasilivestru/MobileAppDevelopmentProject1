@@ -27,19 +27,15 @@ class MapFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val mapViewModel =
-            ViewModelProvider(this).get(MapViewModel::class.java)
-
         _binding = FragmentMapBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         map = binding.map
         map.setTileSource(TileSourceFactory.MAPNIK)
         map.controller.setZoom(15.0)
-        val startPoint = GeoPoint(40.416775, -3.703790)
+        val startPoint = GeoPoint(40.411559, -3.694809)
         map.controller.setCenter(startPoint)
-        addMarker(startPoint, "Puerta de Sol, Madrid, Spain")
-
+        addMarker(startPoint, "My Home, Madrid, Spain")
 
         return root
     }

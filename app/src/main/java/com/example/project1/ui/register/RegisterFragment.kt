@@ -34,7 +34,6 @@ class RegisterFragment : Fragment() {
 
         buttonRegister!!.setOnClickListener() {
             registerUser()
-
         }
         return view;
     }

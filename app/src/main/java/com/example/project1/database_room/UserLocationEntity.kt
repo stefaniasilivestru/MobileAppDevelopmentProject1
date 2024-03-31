@@ -1,5 +1,4 @@
-package com.example.project1
-
+package com.example.project1.database_room
 
 import androidx.room.Entity
 import androidx.room.ForeignKey

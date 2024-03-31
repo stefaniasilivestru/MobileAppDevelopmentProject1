@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text="Place Name:"
+                android:text="@string/place_name"
                 android:textSize="20sp"
                 android:textColor="@color/primary_dark_color"
                 android:layout_marginTop="20dp"/>
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text="Longitude:"
+                android:text="@string/longitude"
                 android:textSize="20sp"
                 android:textColor="@color/primary_dark_color"
                 android:layout_marginTop="20dp"/>
@@ -63,7 +63,7 @@
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Latitude:"
+                android:text="@string/latitude"
                 android:textSize="20sp"
                 android:textColor="@color/primary_dark_color"
                 android:layout_marginTop="20dp"/>

@@ -44,17 +44,15 @@ class PlacesFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recycler_view_places)
         recyclerView?.layoutManager = LinearLayoutManager(context)
 
-        // retrive the data from the database into a recycler view
+        // Retrive the data from the database into a recycler view
         if (FirebaseAuth.getInstance().currentUser != null) {
            firebaseRef = FirebaseDatabase.getInstance(DATABASE_URL).getReference("routes")
             Log.d("PlacesFragment", "Firebase reference: $firebaseRef")
             placesList = arrayListOf()
             fetchData()
-
+        } else {
+            Log.e("PlacesFragment", "User is not logged in")
         }
-
-
-
         return view
 
     }
@@ -63,10 +61,9 @@ class PlacesFragment : Fragment() {
         firebaseRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
+                    // Get the route from shared preferences
                     val sharedPreferences = activity?.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
                     val routeId = sharedPreferences?.getString("routeId", null)
-                    Log.d("PlacesFragment", "Route ID: $routeId")
-
                     if (routeId != null && snapshot.child(routeId).exists()) {
                         for (placeSnapshot in snapshot.child(routeId).child("places").children) {
                             val place = placeSnapshot.getValue(Place::class.java)

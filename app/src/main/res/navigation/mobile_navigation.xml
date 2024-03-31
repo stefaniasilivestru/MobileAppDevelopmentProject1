@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_places_to_weather"
             app:destination="@id/nav_weather" />
+        <action
+            android:id="@+id/action_routes_to_view_route"
+            app:destination="@id/nav_view_route" />
     </fragment>
 
     <fragment
@@ -91,4 +94,10 @@
         android:name="com.example.project1.ui.weather.WeatherFragment"
         android:label="@string/menu_weather"
         tools:layout="@layout/fragment_weather" />
+
+    <fragment
+        android:id="@+id/nav_view_route"
+        android:name="com.example.project1.ui.routes.ViewRouteFragment"
+        android:label="@string/menu_map"
+        tools:layout="@layout/fragment_view_route" />
 </navigation>

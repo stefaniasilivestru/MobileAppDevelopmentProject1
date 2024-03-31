@@ -16,7 +16,6 @@ import com.example.project1.databinding.FragmentShareBinding
 class ShareFragment : Fragment() {
     private var _binding: FragmentShareBinding? = null
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

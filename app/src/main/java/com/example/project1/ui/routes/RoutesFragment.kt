@@ -54,11 +54,9 @@ class RoutesFragment : Fragment() {
                 buttonAddRoute!!.setOnClickListener() {
                     addRoute()
                 }
-                // retrive the data from the database into a recycler view
+
+                // Retrive the data from the database into a recycler view
                 fetchData()
-                Log.d("RoutesFragment", routesList.toString())
-
-
             } else {
                 view = inflater.inflate(R.layout.fragment_routes_unconnected, container, false)
             }

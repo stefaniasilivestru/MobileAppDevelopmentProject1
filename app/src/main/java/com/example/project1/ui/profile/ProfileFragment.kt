@@ -1,41 +1,21 @@
 package com.example.project1.ui.profile
 
-import android.app.AlertDialog
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.project1.MainActivity
 import com.example.project1.R
-import com.example.project1.UserEntity
-import com.example.project1.UserLocationEntity
-import com.example.project1.databinding.FragmentLoginConnectedBinding
-import com.example.project1.databinding.FragmentProfileBinding
 import com.firebase.ui.auth.AuthUI
-import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.auth
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class ProfileFragment : Fragment() {
 
-    // variables
     private var editEmail : EditText? = null
     private var editPassword : EditText? = null
     private var mAuth : FirebaseAuth? = null

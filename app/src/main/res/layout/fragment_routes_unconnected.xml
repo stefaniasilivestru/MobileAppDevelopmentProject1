@@ -19,7 +19,7 @@
         android:id="@+id/textViewDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome! Please sign in to access your routes."
+        android:text="@string/welcome_please_sign_in_to_access_your_routes"
         android:textSize="24sp"
         android:textColor="@color/primary_dark_color"
         android:textAlignment="center"
