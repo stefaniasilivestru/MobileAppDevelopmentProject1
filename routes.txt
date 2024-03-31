@@ -1,0 +1,35 @@
+Demo tests
+
+Route name: Hawaii
+    Place name: Iolani Palace - Hawaii 5.0
+                lat: 21.306667
+                long: -157.858889
+
+    Place name: Waikiki beach - Hawaii 5.0
+               lat: 21.280693
+               long: -157.834549
+
+Route name: New York
+    Place name: Friends Apartment - Friends
+                lat: 40.732218
+                long: -74.005201
+
+    Place name: Plaza Hotel - Home Alone II
+                lat: 40.764268
+                long: -73.974155
+
+Route name: Madrid
+    Place name: Casa de Papel (Plaza Callao) - Scene with money dropping from sky
+                lat: 40.419862
+                long: -3.705828
+
+    Place name: Casa de Papel (Ministerio de Fomento) - Season 3 & 4 & 5
+                lat: 40.441098
+                long: -3.688418
+
+    Place name: Casa de Papel (CSIC) - Season 1 & 2
+                lat: 40.44105
+                long: -3.68635
+
+
+

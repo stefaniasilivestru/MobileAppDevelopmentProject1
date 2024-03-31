@@ -1,4 +1,4 @@
-# Your App's Name (e.g., MADTracking)
+# Tripify
 
 ## Workspace
 
@@ -80,7 +80,7 @@ Include screenshots of the app in action. You can upload the images to GitHub an
       <p align="center">See weather route</p>
     </td>
     <td>
-      <img src="img/nav_see_routes.png" width="80%" alt="View route on map"/>
+      <img src="img/nav_see_route.png" width="80%" alt="View route on map"/>
       <p align="center">View route on map</p>
     </td>
   </tr>
@@ -113,49 +113,62 @@ Include screenshots of the app in action. You can upload the images to GitHub an
 ## Demo Video
 
 Video demonstrating how the app works (Max 1 video of 1 minute), upload it to a platform like YouTube or Vimeo (it might also work with Stream) and link it here:  
-<a href="www.urmeaza.com">
+<a href="https://upm365-my.sharepoint.com/:v:/g/personal/stefania_silivestru_alumnos_upm_es/EbT05Rg9C1hMm-jWP7HQSoYB0bMt2Y5qxVrDe_6t7AQ33A?e=bW4qHa&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">
 </a>
 
 ## Features
 
-List the **functional** features of the app. For example:
+List the **functional** features of the app.
 
-- Search for common routes in Madrid.
-- Filters by transport type.
-- Interactive maps.
-- Real-time traffic information.
+- Add routes and places using a specific criteria (e.g in our demo: routes in cities where famous movies and series were filmed)
+- Display route on map
+- Change language app
+- List your places
+- Delete and edit route
+- See weather for a specific location
 
-List the **technical** features of the app. You might include specific references to source code
-in your repo. For example:
+List the **technical** features of the app.
 
 - Persistence in csv/text file
-- Persistence in shared preferences
-- Persistence in Room database. Ref: [Source code](https://github.com/btabuenca/HelloWorldKt/blob/268a3367296238c76ec1baa18d0b5d268a49235f/app/src/main/java/es/upm/btb/helloworldkt/persistence/room/LocationEntity.kt#L6 "LocationEntity")
+- Work with Fragments instead of Activities
+- Navigation between fragments using navigation components
+- Data binding, View binding (View Model) and LiveData (features that allows us to write code easily that interacts with the view)
+- Use of RecyclerView
+- Persistence in Shared Preferences (routeName and routeId)
+- Persistence in Room database. (e.g: For learning purposes database for users and login/logout/register functionality that was described in previous releases, but migrate the idea using Firebase Auth later.)
 - Firebase Realtime database
-- Firebase authentication
-- Maps: Openstreetmaps or Google maps
-- Resful APIs used (_e.g., Openwheathermaps https://openweathermap.org/api .Describe the api here_).
-- Menu: _e.g., Toolbar_
-- Images: _e.g. glide or picasso library_
-- Sensors: _e.g., GPS coordinates, noise meter, light meter, compass, gyroscope, ..._
-- ...
+- Firebase Authentication
+- Maps: OpenStreetMaps
+- Restful APIs used (_e.g., Openwheathermaps https://openweathermap.org/api .Retrieve weather information data based on specific location_).
+- Menu: _e.g., Navigation Drawer Menu_
+- Images: _e.g. Picasso library_
+- Test API: Postman
+
 
 ## How to Use
 
 Provide instructions on how to get started with the app as user.
+- Create an account using Email & Password or Sign up by Gmail
+- Log in into your account
+- Add a route by typing the city where the route will be located
+- Choose your niche route (eg: route where famous movies were filmed)
+- Add places
+- Choose what actions to perform: see weather details, see route on map, delete your route
+- If needed, change your app language
+- If needed, share your feedback on Gmail to the creators of the app
+- If needed, tell your friends about your routes
 
-## Additional section
+## Additional Information
 
-You might describe any additional section you might consider necessary. Remove this if not necessary.
+The routes.txt file has some tests to check the functionality of the app.
+
 
 ## Participants
 
 List of MAD developers:
 
-- Name SecondName Member1 (emailmemmber1@alumunos.upm.es)
-- Name SecondName Member1 (emailmemmber1@alumunos.upm.es)
-
-Workload distribution between members: (Percentage member1 / Percentage member 2) . _Please only specify in case of unevenly balanced workload distribution long the project e.g., (60%/40%). If not specified 50%/50% will be assumed_
+- Stefania Silivestru Member1 (stefania.silivestru@alumunos.upm.es)
+- Mihai-Victor Alexe Member2 (mihai-victor.alexe@alumunos.upm.es)
 
 ```bash
 you might include references or commands if necessary
