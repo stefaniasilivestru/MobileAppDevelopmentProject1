@@ -111,8 +111,7 @@ Include screenshots of the app in action. You can upload the images to GitHub an
 </table>
 
 ## Demo Video
-<a href="https://upm365-my.sharepoint.com/:v:/g/personal/stefania_silivestru_alumnos_upm_es/EbT05Rg9C1hMm-jWP7HQSoYB0bMt2Y5qxVrDe_6t7AQ33A?e=bW4qHa&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">
-</a>
+Link to demo: https://shorturl.at/fCHX4
 
 ## Features
 
